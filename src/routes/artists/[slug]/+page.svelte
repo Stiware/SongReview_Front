@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import { page } from "$app/stores";
   import SongCard from "$lib/components/SongCard.svelte";
   import { artists, songs } from "$lib/stores/mockData";
@@ -10,7 +11,7 @@
 <div class="artist-detail">
   {#if artist}
     <div class="back-link">
-      <a href="/artists">&larr; All Artists</a>
+      <a href="{base}/artists">&larr; All Artists</a>
     </div>
     <div class="artist-hero">
       <img class="image" src={artist.imageUrl} alt={artist.name} />
@@ -37,7 +38,7 @@
   {:else}
     <div class="not-found">
       <h1>Artist not found</h1>
-      <a href="/artists">Browse artists</a>
+      <a href="{base}/artists">Browse artists</a>
     </div>
   {/if}
 </div>

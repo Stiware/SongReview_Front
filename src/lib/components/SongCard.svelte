@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import type { Song } from "$lib/stores/mockData";
   import { getRelativeTime } from "$lib/stores/mockData";
 
   let { song }: { song: Song } = $props();
 </script>
 
-<a href="/songs/{song.id}" class="song-card">
+<a href="{base}/songs/{song.id}" class="song-card">
   <img class="cover" src={song.coverUrl} alt={song.title} loading="lazy" />
   <div class="info">
     <h3 class="title">{song.title}</h3>

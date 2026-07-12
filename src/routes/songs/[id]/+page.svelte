@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import { page } from "$app/stores";
   import { songs, getRelativeTime } from "$lib/stores/mockData";
 
@@ -8,15 +9,15 @@
 <div class="song-detail">
   {#if song}
     <div class="back-link">
-      <a href="/">&larr; Back to Home</a>
+      <a href={base}>&larr; Back to Home</a>
     </div>
     <div class="detail-card">
       <img class="cover" src={song.coverUrl} alt={song.title} />
       <div class="info">
         <div class="genre-badge">{song.genre}</div>
         <h1>{song.title}</h1>
-        <a href="/artists/{song.artistSlug}" class="artist-link">{song.artist}</a>
-        <a href="/albums/{song.albumSlug}" class="album-link">{song.album}</a>
+        <a href="{base}/artists/{song.artistSlug}" class="artist-link">{song.artist}</a>
+        <a href="{base}/albums/{song.albumSlug}" class="album-link">{song.album}</a>
         <div class="meta-row">
           <span class="duration">{song.duration}</span>
           <span class="sep">&middot;</span>
@@ -66,7 +67,7 @@
   {:else}
     <div class="not-found">
       <h1>Song not found</h1>
-      <a href="/">Go back home</a>
+      <a href={base}>Go back home</a>
     </div>
   {/if}
 </div>

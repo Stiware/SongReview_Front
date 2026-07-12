@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { base } from "$app/paths";
+
   let searchQuery = $state("");
   let isLoggedIn = $state(false);
 
@@ -13,7 +15,7 @@
   }
 
   function goToLogin() {
-    window.location.href = "/auth";
+    window.location.href = `${base}/auth`;
   }
 </script>
 
@@ -24,7 +26,7 @@
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
       </svg>
     </button>
-    <a href="/" class="logo">
+    <a href={base} class="logo">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M9 18V5l12-2v13"/>
         <circle cx="6" cy="18" r="3"/>
@@ -44,7 +46,7 @@
 
   <div class="header-right">
     {#if isLoggedIn}
-      <button class="upload-btn" onclick={() => window.location.href = "/upload"}>
+      <button class="upload-btn" onclick={() => window.location.href = `${base}/upload`}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
           <polyline points="17 8 12 3 7 8"/>

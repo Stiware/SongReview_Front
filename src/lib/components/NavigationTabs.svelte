@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import { page } from "$app/stores";
 
   const tabs = [
-    { label: "Home", href: "/", icon: "home" },
-    { label: "Artists", href: "/artists", icon: "users" },
-    { label: "Albums", href: "/albums", icon: "disc" },
+    { label: "Home", href: base, icon: "home" },
+    { label: "Artists", href: `${base}/artists`, icon: "users" },
+    { label: "Albums", href: `${base}/albums`, icon: "disc" },
   ];
 </script>
 

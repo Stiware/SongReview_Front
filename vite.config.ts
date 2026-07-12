@@ -19,7 +19,12 @@ export default defineConfig({
 
 			adapter: adapter({
 				fallback: '404.html'
-			})
+			}),
+
+			handleHttpError: ({ path }) => {
+				if (path === '/' || path === '') return;
+				throw new Error(`Failed to prerender ${path}`);
+			}
 		})
 	]
 });

@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import type { Album } from "$lib/stores/mockData";
 
   let { album }: { album: Album } = $props();
 </script>
 
-<a href="/albums/{album.slug}" class="album-card">
+<a href="{base}/albums/{album.slug}" class="album-card">
   <img class="cover" src={album.coverUrl} alt={album.title} loading="lazy" />
   <h3 class="title">{album.title}</h3>
   <p class="artist">{album.artist}</p>
