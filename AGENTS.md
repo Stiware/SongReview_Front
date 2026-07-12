@@ -5,7 +5,7 @@
 *   **Framework:** SvelteKit 2 + Svelte 5 (runes mode forced for all project files via `vite.config.ts`)
 *   **Package Manager:** pnpm (`engine-strict=true` in `.npmrc`)
 *   **Language:** TypeScript (strict, `moduleResolution: "bundler"`)
-*   **Adapter:** `@sveltejs/adapter-auto` (switch per target environment)
+*   **Adapter:** `@sveltejs/adapter-static` (deployed to GitHub Pages)
 
 ## Developer Commands
 
@@ -15,6 +15,7 @@
 *   **Preview build:** `pnpm run preview`
 *   **Type check:** `pnpm run check` (runs `svelte-kit sync` then `svelte-check`)
 *   **Watch type check:** `pnpm run check:watch`
+*   **Build with base path:** `BASE_PATH=/SongReview_Front pnpm run build` (for GitHub Pages)
 
 ## Architecture
 
@@ -29,5 +30,5 @@
 *   **`prepare` script** auto-runs `svelte-kit sync` on `pnpm install`, generating `.svelte-kit/` types.
 *   **`engine-strict=true`** in `.npmrc` — install will fail if Node.js version doesn't satisfy the package's `engines` field.
 *   **No tests, no linter, no formatter** configured.
-*   **No CI** — no GitHub Actions or other CI workflows.
+*   **CI:** GitHub Actions workflow in `.github/workflows/deploy.yml` — builds and deploys to GitHub Pages on push to `main`.
 *   **Adapter:** `@sveltejs/adapter-auto` — switch per target environment (see [SvelteKit adapter docs](https://svelte.dev/docs/kit/adapters)).
