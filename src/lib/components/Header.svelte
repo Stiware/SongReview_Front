@@ -204,4 +204,28 @@
     font-weight: 600;
     font-size: 0.85rem;
   }
+
+  @media (max-width: 480px) {
+    .header {
+      padding: 12px;
+    }
+    .search-bar input::placeholder {
+      color: transparent;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      gap: 10px;
+    }
+    .header-left {
+      gap: 8px;
+    }
+    .header-right {
+      gap: 8px;
+    }
+    .search-bar {
+      max-width: 240px;
+    }
+  }
 </style>

@@ -71,4 +71,27 @@
     flex-direction: column;
     gap: 8px;
   }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 20px 12px 24px;
+    }
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 28px 16px 24px;
+    }
+    .section-header h2 {
+      font-size: 1.1rem;
+    }
+  }
 </style>

@@ -1,0 +1,40 @@
+# openspec/config.yaml
+schema: spec-driven
+
+context: |
+  SvelteKit 2 + Svelte 5 (runes mode forced via vite.config.ts), TypeScript strict,
+  pnpm 11, Vite 8. Mock-data frontend with no backend — all data lives in
+  src/lib/stores/mockData.ts (Song, Artist, Album). Routes: home, albums/[slug],
+  artists/[slug], songs/[id], auth, upload. Components in src/lib/components/:
+  Header, NavigationTabs, SongCard, AlbumCard, ArtistCard. Deployed to GitHub Pages
+  via @sveltejs/adapter-static in CI/CD.
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - State mock-data impact when adding/modifying data structures
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Use Svelte 5 runes ($state, $derived, $props, etc.) — no legacy $$props or export let
+    - Prefer component composition over slots (use snippets: {#snippet}, {@render})
+    - Document architecture decisions with rationale
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    guidelines:
+      - Follow existing code patterns in src/lib/components/
+      - Use TypeScript strict — no any, no implicit any
+      - Respect runes-only mode (no export let, no $$props)
+      - Mock data stays in src/lib/stores/mockData.ts — no API integration
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: "pnpm run build"
+    type_check_command: "pnpm run check"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas

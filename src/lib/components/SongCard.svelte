@@ -101,4 +101,27 @@
     font-size: 0.78rem;
     color: var(--text-tertiary);
   }
+
+  @media (max-width: 480px) {
+    .song-card {
+      padding: 10px 12px;
+      gap: 10px;
+    }
+    .cover {
+      width: 40px;
+      height: 40px;
+    }
+    .title {
+      font-size: 0.9rem;
+    }
+    .meta {
+      gap: 2px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .song-card {
+      gap: 10px;
+    }
+  }
 </style>

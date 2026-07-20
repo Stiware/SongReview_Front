@@ -81,4 +81,26 @@
     color: var(--primary);
     border-bottom-color: var(--primary);
   }
+
+  @media (max-width: 480px) {
+    .nav-inner {
+      overflow-x: auto;
+      padding: 0 12px;
+      gap: 0;
+    }
+    .tab {
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .nav-tabs {
+      top: 57px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .nav-inner {
+      gap: 2px;
+    }
+  }
 </style>

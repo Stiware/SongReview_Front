@@ -66,4 +66,23 @@
     font-size: 0.78rem;
     color: var(--text-tertiary);
   }
+
+  @media (max-width: 480px) {
+    .album-card {
+      padding: 10px;
+    }
+    .title {
+      font-size: 0.85rem;
+    }
+    .cover {
+      border-radius: 8px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .meta {
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+  }
 </style>

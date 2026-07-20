@@ -66,4 +66,25 @@
     font-size: 0.78rem;
     color: var(--text-tertiary);
   }
+
+  @media (max-width: 480px) {
+    .artist-card {
+      padding: 12px;
+    }
+    .image {
+      width: 80px;
+      height: 80px;
+    }
+    .stats {
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats {
+      gap: 8px;
+    }
+  }
 </style>

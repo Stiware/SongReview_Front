@@ -45,3 +45,15 @@ a:hover {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .content-area {
+    padding: 16px;
+  }
+}
